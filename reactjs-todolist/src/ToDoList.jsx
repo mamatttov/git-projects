@@ -6,7 +6,7 @@ export default function ToDoList(props) {
   return (
     <ul className="main">
       {todos.map((todo, todoIndex) => (
-        <ToDoCard key={todoIndex}>
+        <ToDoCard {...props} key={todoIndex} todoIndex={todoIndex}>
           <p>{todo}</p>
         </ToDoCard>
       ))}

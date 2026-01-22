@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function ToDoInput(props) {
   const { handleAddTodo } = props;
   const [todoValue, setTodoValue] = useState("");
+
   return (
     <header>
       <input
@@ -11,10 +12,17 @@ export default function ToDoInput(props) {
         onChange={(e) => setTodoValue(e.target.value)}
         type="text"
         placeholder="Enter todo..."
+        onKeyDown={(e) => {
+          if (e.key === "Enter") {
+            handleAddTodo(todoValue);
+            setTodoValue("");
+          }
+        }}
       />
       <button
         onClick={() => {
           handleAddTodo(todoValue);
+          setTodoValue("");
         }}
       >
         Add
