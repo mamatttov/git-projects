@@ -4,6 +4,9 @@ import ToDoList from "./ToDoList";
 
 function App() {
   const [todos, setTodos] = useState([]);
+  const [todoValue, setTodoValue] = useState("");
+
+  //Функции для добавления, удаления и редактирования дел
 
   function handleAddTodo(newTodo) {
     const newTodoList = [...todos, newTodo];
@@ -15,10 +18,25 @@ function App() {
     });
     setTodos(newTodoList);
   }
+  function handleEditTodo(index) {
+    const valueToBeEdited = todos[index];
+    setTodoValue(valueToBeEdited);
+
+    handleDeleteTodo(index);
+  }
+
   return (
     <>
-      <ToDoInput handleAddTodo={handleAddTodo} />
-      <ToDoList todos={todos} handleDeleteTodo={handleDeleteTodo} />
+      <ToDoInput
+        todoValue={todoValue}
+        setTodoValue={setTodoValue}
+        handleAddTodo={handleAddTodo}
+      />
+      <ToDoList
+        todos={todos}
+        handleDeleteTodo={handleDeleteTodo}
+        handleEditTodo={handleEditTodo}
+      />
     </>
   );
 }

@@ -1,9 +1,8 @@
+//Компонент ввода нового дела
 import React from "react";
-import { useState } from "react";
 
 export default function ToDoInput(props) {
-  const { handleAddTodo } = props;
-  const [todoValue, setTodoValue] = useState("");
+  const { handleAddTodo, todoValue, setTodoValue } = props;
 
   return (
     <header>
