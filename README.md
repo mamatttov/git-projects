@@ -1,5 +1,7 @@
 # React Todo List / React Список задач
 
+Netlify link: https://thriving-cupcake-6e4afd.netlify.app/
+
 ## 🇷🇺 Русский
 
 ### Описание
